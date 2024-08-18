@@ -1,3 +1,11 @@
+if [ -n "$NVIM" ]; then
+    if [ -x "$(command -v nvr)" ]; then
+        alias nvim=nvr
+    else
+        alias nvim='echo "No Nesting!"'
+    fi
+fi
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -10,6 +18,7 @@ fi
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export VISUAL='nvim'
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
